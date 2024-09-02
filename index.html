@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./styles.css">
+        
+    </head> 
+    <body>
+        <div class="container">
+            <div >
+                <h1 class = "header_text">Você me ama muito?</h1>
+            </div>
+            <div class="gif_container">
+                <img src="img\porquinho.jpg" alt="Cute animated illustration" height="400" width="400">
+            </div>
+            <div class = "buttons">
+                <button class="btn" id = "yesButton" onclick="nextPage()">Simm</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">Não(mentiroso)</button>
+                <script>
+                    function nextPage() {
+                        window.location.href = "yes.html";
+                    }
+                    
+                    function moveButton() {
+        const containerWidth = document.querySelector('.container').offsetWidth;
+        const containerHeight = document.querySelector('.container').offsetHeight;
+        const buttonWidth = document.getElementById('noButton').offsetWidth;
+        const buttonHeight = document.getElementById('noButton').offsetHeight;
+
+        var x = Math.random() * (containerWidth - buttonWidth) + 20;
+        var y = Math.random() * (containerHeight - buttonHeight) + 20;
+
+        document.getElementById('noButton').style.left = `${x}px`;
+        document.getElementById('noButton').style.top = `${y}px`;
+    }
+                </script> 
+            </div>
+        </div>
+       
+    </body> 
+</html>
